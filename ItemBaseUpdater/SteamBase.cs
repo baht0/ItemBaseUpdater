@@ -1,17 +1,41 @@
 ﻿namespace UpdateBase
 {
-    public class Currency
-    {
-        public int Id { get; set; } = 0;
-        public string Code { get; set; } = String.Empty;
-        public string Country { get; set; } = String.Empty;
-        public string Symbol { get; set; } = String.Empty;
-    }
     public class Items
     {
-        public string itemName { get; set; } = String.Empty;
-        public int steamId { get; set; } = 0;
-        public string type { get; set; } = String.Empty;
-        public string quality { get; set; } = String.Empty;
+        public string ItemName { get; set; } = string.Empty;
+        public Type Type { get; set; }
+        public Quality? Quality { get; set; }
+        public SteamItem Steam { get; set; } = new();
+    }
+    public class SteamItem
+    {
+        public int Id { get; set; }
+    }
+    public enum Type
+    {
+        Weapon,
+        Knife,
+        Gloves,
+        Agent,
+        Sticker,
+        Patch,
+        Collectable,
+        Key,
+        Pass,
+        MusicKit,
+        Graffiti,
+        Container,
+        Gift,
+        Tool
+    }
+    public enum Quality
+    {
+        ConsumerGrade,
+        IndustrialGrade,
+        MilSpec,
+        Restricted,
+        Classified,
+        Covert,
+        Contraband
     }
 }
